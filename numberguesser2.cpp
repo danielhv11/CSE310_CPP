@@ -19,7 +19,9 @@ void Start() {
 	cout << "Wlcome! Select difficulty mode:\n"; // the user has to select a difficulty level
 	cout << "1 : Easy (0-20)\n";
 	cout << "2 : Medium (0-50)\n";
-	cout << "3 : Difficult (0-100)\n";
+	cout << "3 : Hard (0-70)\n";
+    cout << "4 : Difficult (0-100)\n";
+	cout << "5 : Impossible (0-200)\n";
 	cout << "or type another key to quit\n";
 	c = 30;
 
@@ -34,14 +36,19 @@ void Start() {
 			maxrand = 50;
 			break;
 		case '3':
-			maxrand = 100;
+			maxrand = 70;
+		case '4':
+			maxrand = 100;	
 			break;
+		case '5':
+			maxrand = 200;	
+			break;	
 		default:
 			exit(0);
 		break;
 	}
 
-	life = 5;         // number of lifes of the player
+	life = 6;         // number of lifes of the player
 	srand((unsigned)time(NULL)); // init Rand() function
 	j = rand() % maxrand;  // j get a random value between 0 and maxrand
 	
